@@ -1,1 +1,16 @@
-[]
+[
+  {
+    "comment": "working",
+    "rate": 4,
+    "elementId": "tt0120737",
+    "createdAt": "2020-12-18T15:16:34.495Z",
+    "_id": "12e2x957wkiuf13cw"
+  },
+  {
+    "comment": "wooohoo",
+    "rate": 3,
+    "elementId": "tt0112462",
+    "createdAt": "2020-12-18T15:29:00.097Z",
+    "_id": "12e2x95ffkiufh2o2"
+  }
+]
