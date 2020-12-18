@@ -1,7 +1,10 @@
 const express = require("express");
 const cors = require("cors");
 const listEndpoints = require("express-list-endpoints");
-//const moviesRoutes = require("./services/movies");
+const path = require("path");
+const mediaRoutes = require("./services/media");
+const reviewsRoutes = require("./services/reviews");
+
 
 const {
   notFoundHandler,
@@ -13,7 +16,6 @@ const server = express();
 
 const port = process.env.PORT || 3007;
 
-server.use(express.json());
 
 const whiteList = //creating an array, if we are in this mode, then do this
   process.env.NODE_ENV === "production" //this is a cloud provider code for production
@@ -35,13 +37,20 @@ const corsOptions = {
     }
   },
 };
+
+
 // server.use(cors(corsOptions)); // needed for frontend testing
 
 server.use(cors());
+server.use(express.static(path.join(__dirname, '../public/img')))
+server.use(express.json());
+
 
 //ROUTES
 
-//server.use("/movies", moviesRoutes);
+server.use("/media", mediaRoutes);
+server.use("/reviews", reviewsRoutes);
+
 
 // ERROR HANDLERS
 server.use(badRequestHandler);
