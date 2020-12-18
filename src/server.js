@@ -39,9 +39,9 @@ const corsOptions = {
 };
 
 
-// server.use(cors(corsOptions)); // needed for frontend testing
+server.use(cors(corsOptions)); // needed for frontend testing
 
-server.use(cors());
+// server.use(cors());
 server.use(express.static(path.join(__dirname, '../public/img')))
 server.use(express.json());
 
